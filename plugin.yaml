@@ -1,0 +1,12 @@
+name: secretshield
+version: 0.1.0
+description: "Credentials stop at the tool boundary. SecretShield scans every tool call's arguments before dispatch and every finished reply before delivery for credential material (vendor API keys, tokens, private keys, passwords in assignments, bearer credentials), blocks or redacts it fail-closed, and records every attempt in an append-only local incident ledger that stores only metadata, never the secret."
+author: "Riki Wahyudi"
+requires_hermes: ">=0.22.0"
+provides_tools:
+  - shield_status
+provides_hooks:
+  - pre_tool_call
+  - post_tool_call
+  - pre_llm_call
+  - transform_llm_output
