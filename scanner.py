@@ -33,12 +33,12 @@ _DETECTORS: List[Tuple[str, "re.Pattern[str]", int]] = [
     ("telegram_bot_token", re.compile(r"\b\d{8,10}:[A-Za-z0-9_\-]{35}\b"), 0),
     (
         "discord_token",
-        re.compile(r"\b[MN][A-Za-z0-9_\-]{23,}\.[A-Za-z0-9_\-]{6}\.[A-Za-z0-9_\-]{27,}\b"),
+        re.compile(r"\b[MN][A-Za-z0-9_\-]{23,28}\.[A-Za-z0-9_\-]{6}\.[A-Za-z0-9_\-]{27,40}\b"),
         0,
     ),
     (
         "jwt",
-        re.compile(r"\beyJ[A-Za-z0-9_\-]{8,}\.eyJ[A-Za-z0-9_\-]{8,}\.[A-Za-z0-9_\-]{8,}\b"),
+        re.compile(r"\beyJ[A-Za-z0-9_\-]{8,2048}\.eyJ[A-Za-z0-9_\-]{8,2048}\.[A-Za-z0-9_\-]{8,2048}\b"),
         0,
     ),
     (

@@ -111,6 +111,18 @@ def test_transform_clean_reply_untouched():
     assert init.on_transform_llm_output("All done, report saved.", session_id="s3") is None
 
 
+def test_scan_performance_on_long_hyphenated_text():
+    import time
+
+    text = "a-" * 150_000  # 300 KB of hyphenated text
+    assert len(text) == 300_000
+    start = time.perf_counter()
+    findings = scanner.scan_text(text)
+    elapsed = time.perf_counter() - start
+    assert findings == []
+    assert elapsed < 0.2, f"scan of 300 KB hyphenated text took {elapsed:.3f}s"
+
+
 def test_ledger_never_stores_secret():
     import os
     import tempfile

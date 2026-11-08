@@ -1,5 +1,5 @@
 name: secretshield
-version: 0.1.0
+version: 0.1.1
 description: "Credentials stop at the tool boundary. SecretShield scans every tool call's arguments before dispatch and every finished reply before delivery for credential material (vendor API keys, tokens, private keys, passwords in assignments, bearer credentials), blocks or redacts it fail-closed, and records every attempt in an append-only local incident ledger that stores only metadata, never the secret."
 author: "Riki Wahyudi"
 requires_hermes: ">=0.22.0"
