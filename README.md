@@ -1,3 +1,5 @@
+![secretshield](assets/preview.png)
+
 # SecretShield
 
 **Credentials stop at the tool boundary.**
